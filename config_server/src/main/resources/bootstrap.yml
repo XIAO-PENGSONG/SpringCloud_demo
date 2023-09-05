@@ -1,0 +1,44 @@
+server:
+  port: 8301
+
+spring:
+  application:
+    name: configserver
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 127.0.0.1:8848
+# 配置Config：
+      config:
+        refresh-enabled: true      # 支持更改后刷新配置读取
+        file-extension: properties # 文件扩展名
+        group: DEFAULT_GROUP       # 分组
+# 共享或者扩展配置：xxx.config.shared-configs[5].dataId=xxx
+        shared-configs:
+          - data-id: common
+            group: DEFAULT_GROUP
+            refresh: true
+          - data-id: other
+            group: OTHER_GROUP
+            refresh: false
+# 开启Sentinel配置：
+    sentinel:
+      enabled: true
+# Sentinel控制台配置：
+      transport:
+        port: 8719
+        dashboard: 192.168.0.128:8090
+      log:
+        dir: logs/sentinel
+
+# OpenFeign的Fallback依赖于Sentinel
+feign:
+  sentinel:
+    enabled: true
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+

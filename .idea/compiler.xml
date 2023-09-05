@@ -8,9 +8,12 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="Order_Server" />
+        <module name="config_server" />
+        <module name="cloud-sentinel" />
         <module name="User_Server" />
         <module name="feign-api" />
         <module name="gateway" />
+        <module name="cloud_config" />
       </profile>
     </annotationProcessing>
   </component>

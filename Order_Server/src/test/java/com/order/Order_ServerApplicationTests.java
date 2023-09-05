@@ -1,6 +1,6 @@
 package com.order;
 
-import com.order.entity.Order;
+import com.feign.entity.Order;
 import com.order.service.OrderService;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;

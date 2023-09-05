@@ -1,0 +1,39 @@
+# 服务端口配置
+server:
+  port: 8200
+
+spring:
+
+# 配置服务的名字
+  application:
+    name: cloud-config
+
+# 服务发现配置
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 127.0.0.1:8848 # 服务发现的地址，就是nacos的地址
+# config配置相关
+      config:
+        server-addr: 127.0.0.1:8848 # 服务器地址，即nacos地址
+        file-extension: properties  # 服务器配置的扩展名
+        group: DEFAULT_GROUP        # 分组
+        refresh-enabled: true       # 开启自动刷新
+#       prefix: 默认是服务的名字，可以不用配置
+
+#       extension-configs: # 扩展的配置
+        shared-configs:    # 共享的配置
+          - data-id: common.properties
+            group: GROUP_COMMON
+            refresh: true
+          - data-id: common666.yml
+            group: GROUP_COMMON
+            refresh: false # 不支持刷新
+  
+  # jdbc配置
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/ssm
+    username: root
+    password: 12345678
+  

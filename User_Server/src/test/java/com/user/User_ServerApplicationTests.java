@@ -1,6 +1,6 @@
 package com.user;
 
-import com.user.entity.User;
+import com.feign.entity.User;
 import com.user.service.UserService;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
