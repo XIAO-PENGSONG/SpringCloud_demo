@@ -3,7 +3,7 @@ server:
 
 spring:
   application:
-    name: cloud-user
+    name: userserver
 #配置nacos服务器的地址
   cloud:
     nacos:

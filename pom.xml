@@ -11,6 +11,8 @@
     <modules>
         <module>User_Server</module>
         <module>Order_Server</module>
+        <module>feign-api</module>
+        <module>gateway</module>
     </modules>
 
     <properties>
